@@ -1,0 +1,265 @@
+******************************************************************************
+                  MSP430 Linker PC v4.1.1                      
+******************************************************************************
+>> Linked Mon Sep 02 17:13:44 2013
+
+OUTPUT FILE NAME:   <Rotary Encoder.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000f918
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000080  00000034  0000004c  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000f800   000007e0  0000017c  00000664  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000002  00000000  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000000  00000002  RWIX
+  INT06                 0000ffec   00000002  00000000  00000002  RWIX
+  INT07                 0000ffee   00000002  00000000  00000002  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000000  00000002  RWIX
+  INT12                 0000fff8   00000002  00000000  00000002  RWIX
+  INT13                 0000fffa   00000002  00000000  00000002  RWIX
+  INT14                 0000fffc   00000002  00000002  00000000  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.bss       0    00000200    00000002     UNINITIALIZED
+                  00000200    00000002     main.obj (.bss)
+
+.TI.noinit 
+*          0    00000200    00000000     UNINITIALIZED
+
+.stack     0    0000024c    00000032     UNINITIALIZED
+                  0000024c    00000002     rts430_eabi.lib : boot.obj (.stack)
+                  0000024e    00000030     --HOLE--
+
+.text      0    0000f800    00000172     
+                  0000f800    00000066     main.obj (.text:hand)
+                  0000f866    0000005e     rts430_eabi.lib : autoinit.obj (.text:_auto_init)
+                  0000f8c4    0000002e     main.obj (.text:main)
+                  0000f8f2    00000026     main.obj (.text:p1ch)
+                  0000f918    0000001a     rts430_eabi.lib : boot.obj (.text:_c_int00_noexit)
+                  0000f932    00000014                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000f946    00000012     main.obj (.text:InitializeClocks)
+                  0000f958    00000010     rts430_eabi.lib : epilog.obj (.text)
+                  0000f968    00000004                     : pre_init.obj (.text:_system_pre_init)
+                  0000f96c    00000004                     : exit.obj (.text:abort)
+                  0000f970    00000002     main.obj (.text:Trap_ISR)
+
+.cinit     0    0000f972    0000000a     
+                  0000f972    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000f976    00000002     (__TI_handler_table)
+                  0000f978    00000004     (__TI_cinit_table)
+
+.int02     0    0000ffe4    00000002     
+                  0000ffe4    00000002     main.obj (.int02)
+
+.int03     0    0000ffe6    00000002     
+                  0000ffe6    00000002     main.obj (.int03)
+
+.int08     0    0000fff0    00000002     
+                  0000fff0    00000002     main.obj (.int08)
+
+.int09     0    0000fff2    00000002     
+                  0000fff2    00000002     main.obj (.int09)
+
+.int10     0    0000fff4    00000002     
+                  0000fff4    00000002     main.obj (.int10)
+
+.int14     0    0000fffc    00000002     
+                  0000fffc    00000002     main.obj (.int14)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430_eabi.lib : boot.obj (.reset)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0000f978 records: 1, size/record: 4, table size: 4
+	.bss: load addr=0000f972, load size=00000004 bytes, run addr=00000200, run size=00000002 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000f976 records: 1, size/record: 2, table size: 2
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000f96c   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010ff   CALBC1_1MHZ
+000010fe   CALDCO_1MHZ
+0000005b   CAPD
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+00000000   IE1
+00000002   IFG1
+0000f946   InitializeClocks
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000172   TACCR0
+00000174   TACCR1
+00000162   TACCTL0
+00000164   TACCTL1
+00000160   TACTL
+0000012e   TAIV
+00000170   TAR
+0000f970   Trap_ISR
+00000120   WDTCTL
+0000027e   __STACK_END
+00000032   __STACK_SIZE
+0000f978   __TI_CINIT_Base
+0000f97c   __TI_CINIT_Limit
+0000f976   __TI_Handler_Table_Base
+0000f978   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+00000001   __TI_args_main
+00000001   __TI_exit
+0000f932   __TI_zero_init
+ffffffff   __binit__
+ffffffff   __c_args__
+0000f964   __mspabi_func_epilog_1
+0000f962   __mspabi_func_epilog_2
+0000f960   __mspabi_func_epilog_3
+0000f95e   __mspabi_func_epilog_4
+0000f95c   __mspabi_func_epilog_5
+0000f95a   __mspabi_func_epilog_6
+0000f958   __mspabi_func_epilog_7
+0000f866   _auto_init
+0000f918   _c_int00
+0000f918   _c_int00_noexit
+0000fffe   _reset_vector
+0000024c   _stack
+0000f968   _system_pre_init
+0000f96c   abort
+ffffffff   binit
+00000200   count
+0000f800   hand
+0000f8c4   main
+0000f8f2   p1ch
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   __TI_args_main
+00000001   __TI_exit
+00000002   IFG1
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000032   __STACK_SIZE
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012e   TAIV
+00000160   TACTL
+00000162   TACCTL0
+00000164   TACCTL1
+00000170   TAR
+00000172   TACCR0
+00000174   TACCR1
+00000200   count
+0000024c   _stack
+0000027e   __STACK_END
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000f800   hand
+0000f866   _auto_init
+0000f8c4   main
+0000f8f2   p1ch
+0000f918   _c_int00
+0000f918   _c_int00_noexit
+0000f932   __TI_zero_init
+0000f946   InitializeClocks
+0000f958   __mspabi_func_epilog_7
+0000f95a   __mspabi_func_epilog_6
+0000f95c   __mspabi_func_epilog_5
+0000f95e   __mspabi_func_epilog_4
+0000f960   __mspabi_func_epilog_3
+0000f962   __mspabi_func_epilog_2
+0000f964   __mspabi_func_epilog_1
+0000f968   _system_pre_init
+0000f96c   C$$EXIT
+0000f96c   abort
+0000f970   Trap_ISR
+0000f976   __TI_Handler_Table_Base
+0000f978   __TI_CINIT_Base
+0000f978   __TI_Handler_Table_Limit
+0000f97c   __TI_CINIT_Limit
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+
+[73 symbols]
